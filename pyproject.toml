@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ag"
-dynamic = ["version"]
+version = "0.1.0"
 description = 'A command-line AI assistant'
 readme = "README.md"
 requires-python = ">=3.13"
@@ -32,9 +32,6 @@ Source = "https://github.com/srcres258/ag"
 
 [project.scripts]
 ag = "main:main"
-
-[tool.hatch.version]
-path = "src/__about__.py"
 
 [tool.hatch.build.targets.sdist]
 ignore-vcs = true
