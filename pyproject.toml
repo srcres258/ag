@@ -11,7 +11,7 @@ requires-python = ">=3.13"
 license = "MIT"
 keywords = []
 authors = [
-  { name = "srcres258", email = "src.res.211@gmail.com" },
+  { name = "srcres258", email = "src.res.211@gmail.com" }
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -21,8 +21,8 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "openai>=2.14.0",
-  "termcolor>=3.3.0",
+  "openai>=2.11.0",
+  "termcolor>=3.1.0",
   "prompt-toolkit>=3.0.52"
 ]
 
