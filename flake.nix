@@ -4,33 +4,47 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    
-    pyproject-nix = {
-      url = "github:pyproject-nix/pyproject.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    flake-utils,
-    pyproject-nix
+    flake-utils
   }: flake-utils.lib.eachDefaultSystem (system: let
     pkgs = import nixpkgs {
       inherit system;
     };
 
-    python = pkgs.python312;
-    pythonPkgs = pkgs.python313Packages;
+    python = pkgs.python313;
+    pythonEnv = pkgs.python313Packages;
 
-    project = pyproject-nix.lib.project.loadPyproject {
-      projectRoot = ./.;
+    pname = "ag";
+    version = "0.1.0";
+    ag = pythonEnv.buildPythonApplication {      
+      inherit pname version;
+      
+      src = ./.;
+
+      propagatedBuildInputs = with pythonEnv; [
+        openai
+        termcolor
+        prompt-toolkit
+      ];
+      nativeBuildInputs = with pythonEnv; [
+        hatchling
+      ];
+
+      format = "pyproject";
+
+      doCheck = true;
+
+      meta = with pkgs.lib; {
+        description = "A command-line AI assistant";
+        homepage = "https://github.com/srcres258/ag";
+        license = licenses.mit;
+        maintainers = with maintainers; [ srcres258 ];
+      };
     };
-    ag = pythonPkgs.buildPythonPackage (
-      project.renderers.buildPythonPackage { inherit python; }
-        // { src = ./.; }
-    );
   in {
     packages.default = ag;
 
