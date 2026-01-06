@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ag"
+dynamic = ["version"]
+description = 'A command-line AI assistant'
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "srcres258", email = "src.res.211@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "openai>=2.14.0",
+  "termcolor>=3.3.0",
+  "prompt-toolkit>=3.0.52"
+]
+
+[project.urls]
+Issues = "https://github.com/srcres258/ag/issues"
+Source = "https://github.com/srcres258/ag"
+
+[project.scripts]
+ag = "main:main"
+
+[tool.hatch.version]
+path = "src/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+ignore-vcs = true
+include = ["src/main.py"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/main.py"]
