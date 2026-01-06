@@ -21,7 +21,7 @@
       inherit system;
     };
 
-    python = pkgs.python313;
+    python = pkgs.python312;
     pythonPkgs = pkgs.python313Packages;
 
     project = pyproject-nix.lib.project.loadPyproject {
