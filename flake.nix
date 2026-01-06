@@ -15,7 +15,7 @@
       inherit system;
     };
 
-    python = pkgs.python313;
+    python = pkgs.python312;
     pythonEnv = pkgs.python313Packages;
 
     pname = "ag";
