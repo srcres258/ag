@@ -16,13 +16,13 @@
     };
 
     python = pkgs.python312;
-    pythonEnv = pkgs.python313Packages;
+    pythonEnv = pkgs.python312Packages;
 
     pname = "ag";
     version = "0.1.0";
-    ag = pythonEnv.buildPythonApplication {      
+    ag = pythonEnv.buildPythonApplication {
       inherit pname version;
-      
+
       src = ./.;
 
       propagatedBuildInputs = with pythonEnv; [

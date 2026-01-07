@@ -7,7 +7,7 @@ name = "ag"
 version = "0.1.0"
 description = 'A command-line AI assistant'
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 license = "MIT"
 keywords = []
 authors = [
@@ -16,14 +16,15 @@ authors = [
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "openai>=2.11.0",
-  "termcolor>=3.1.0",
-  "prompt-toolkit>=3.0.52"
+  "openai>=1.16.2",
+  "termcolor>=2.4.0",
+  "prompt-toolkit>=3.0.43"
 ]
 
 [project.urls]
