@@ -39,8 +39,6 @@ DEFAULT_MODEL_CHOICES: List[str] = [
     'gpt-oss-120b', 'gpt-4o-mini', 'grok-4.1-fast'
 ]
 MODEL_CHOICE_TO_ID: Dict[str, str] = {
-    'deepseek-v3.1': 'nex-agi/deepseek-v3.1-nex-n1:free',
-    'deepseek-r1t2': 'tngtech/deepseek-r1t2-chimera:free',
     'bytedance-seed-1.6': 'bytedance-seed/seed-1.6-flash',
     'hunyuan-a13b': 'tencent/hunyuan-a13b-instruct',
     'gpt-oss-120b': 'openai/gpt-oss-120b',
