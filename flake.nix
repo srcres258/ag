@@ -19,7 +19,7 @@
     pythonEnv = pkgs.python312Packages;
 
     pname = "ag";
-    version = "0.1.1";
+    version = "0.1.2";
     ag = pythonEnv.buildPythonApplication {
       inherit pname version;
 
