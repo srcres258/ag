@@ -35,8 +35,8 @@ parser = argparse.ArgumentParser(
     'large language models via OpenRouter API')
 
 DEFAULT_MODEL_CHOICES: List[str] = [
-    'deepseek-v3.1', 'deepseek-r1t2', 'bytedance-seed-1.6', 'hunyuan-a13b',
-    'gpt-oss-120b', 'gpt-4o-mini', 'grok-4.1-fast'
+    'bytedance-seed-1.6', 'hunyuan-a13b', 'gpt-oss-120b', 'gpt-4o-mini',
+    'grok-4.1-fast'
 ]
 MODEL_CHOICE_TO_ID: Dict[str, str] = {
     'bytedance-seed-1.6': 'bytedance-seed/seed-1.6-flash',
